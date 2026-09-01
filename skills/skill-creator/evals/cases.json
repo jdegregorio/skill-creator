@@ -1,0 +1,97 @@
+{
+  "skill_name": "skill-creator",
+  "routing": [
+    {
+      "prompt": "Create a reusable skill for our incident handoff workflow and include only the references it really needs.",
+      "should_trigger": true,
+      "reason": "new skill authoring and architecture"
+    },
+    {
+      "prompt": "Review this SKILL.md; it has grown into 900 lines and I think the rules are fighting each other.",
+      "should_trigger": true,
+      "reason": "audit and constraint rightsizing"
+    },
+    {
+      "prompt": "This skill works when invoked but Codex almost never chooses it unless I name it explicitly.",
+      "should_trigger": true,
+      "reason": "routing evaluation and description improvement"
+    },
+    {
+      "prompt": "Can you test whether the new version actually improves the generated reports over the old version?",
+      "should_trigger": true,
+      "reason": "baseline treatment comparison"
+    },
+    {
+      "prompt": "Turn the workflow we just used, including my corrections, into a proposed portable agent skill.",
+      "should_trigger": true,
+      "reason": "current-session evidence capture for skill creation"
+    },
+    {
+      "prompt": "Install this skill from GitHub into Codex and Claude and keep it updated automatically.",
+      "should_trigger": false,
+      "reason": "installation and upstream management are outside this skill"
+    },
+    {
+      "prompt": "Audit every skill installed on my Mac and reconcile their upstream versions.",
+      "should_trigger": false,
+      "reason": "inventory and lifecycle management are outside this skill"
+    },
+    {
+      "prompt": "Write an AGENTS.md for this repository so coding agents follow our contribution policy.",
+      "should_trigger": false,
+      "reason": "repository instruction authoring is adjacent but not skill creation"
+    },
+    {
+      "prompt": "Use the existing PDF skill to extract the tables from these quarterly reports.",
+      "should_trigger": false,
+      "reason": "ordinary use of another skill"
+    },
+    {
+      "prompt": "Show me which plugins and skills are active in my current Codex session.",
+      "should_trigger": false,
+      "reason": "runtime inspection rather than skill engineering"
+    }
+  ],
+  "execution": [
+    {
+      "id": "create-minimal-portable-skill",
+      "prompt": "Create a portable skill from a clear workflow brief with two conditional variants.",
+      "expected_outcome": "A valid bundle uses an appropriate structural pattern, has discriminating triggers, and contains no placeholder resources.",
+      "expectations": [
+        "The skill passes the target static validator.",
+        "Conditional detail is progressively disclosed rather than duplicated in SKILL.md.",
+        "The result includes only resources justified by the workflow."
+      ]
+    },
+    {
+      "id": "rightsize-without-erasing-opinion",
+      "prompt": "Simplify an over-constrained existing skill whose house style is its main value.",
+      "expected_outcome": "Generic and duplicated constraints are removed while the distinctive house style and safety contracts remain.",
+      "expectations": [
+        "The complete existing bundle and repository instructions are inspected before editing.",
+        "The audit distinguishes model-default guidance from deliberate domain opinions.",
+        "Behavioral regression evidence is considered in addition to structural scores."
+      ]
+    },
+    {
+      "id": "diagnose-routing-separately",
+      "prompt": "Improve a skill that succeeds when loaded but under-triggers and collides with a sibling skill.",
+      "expected_outcome": "The description and boundary are tested independently from execution behavior.",
+      "expectations": [
+        "Positive routing prompts include varied realistic phrasing.",
+        "Negative routing prompts are plausible near-misses rather than unrelated tasks.",
+        "Body instructions are not rewritten without evidence of an execution failure."
+      ]
+    },
+    {
+      "id": "compare-revisions-with-evidence",
+      "prompt": "Determine whether a revised skill is actually better than the current version.",
+      "expected_outcome": "Equivalent old/new runs are graded from observable evidence, with blind or repeated comparison used only when it adds confidence.",
+      "expectations": [
+        "The old revision is preserved as a baseline before modification.",
+        "The comparison controls prompt, inputs, model, tools, permissions, and environment where possible.",
+        "The report identifies weak assertions, variance, limitations, and any cost-quality tradeoff without inventing metrics."
+      ]
+    }
+  ]
+}
